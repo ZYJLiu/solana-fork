@@ -83,6 +83,7 @@ module.exports = {
       href: "/developers",
       label: "Overview",
     },
+    ,
     {
       type: "category",
       label: "Get Started",
@@ -277,6 +278,84 @@ module.exports = {
           type: "doc",
           id: "developing/runtime-facilities/sysvars",
           label: "Sysvar Cluster Data",
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Gaming",
+      items: [
+        {
+          type: "doc",
+          id: "developing/gaming",
+          label: "Intro",
+        },
+        {
+          type: "doc",
+          id: "developing/gaming/game-sdks",
+          label: "Game SDKs",
+        },
+        {
+          type: "doc",
+          id: "developing/gaming/nfts-in-games",
+          label: "NFTs in Games",
+        },
+        {
+          type: "category",
+          label: "How to",
+          items: [
+            {
+              type: "doc",
+              id: "developing/gaming/hello-world-unity",
+              label: "Interact with on chain programm",
+            },
+            {
+              type: "doc",
+              id: "developing/gaming/store-sol-in-pda",
+              label: "Store Sol in a program for rewards",
+            },
+            {
+              type: "doc",
+              id: "developing/gaming/interact-with-tokens",
+              label: "Use SPL tokens in a program",
+            },
+            {
+              type: "doc",
+              id: "developing/gaming/turn-based-game",
+              label: "Build a round based game",
+            },
+            {
+              type: "doc",
+              id: "developing/gaming/partial-sign-in-backend",
+              label: "Partial sign in backend",
+            },
+            {
+              type: "doc",
+              id: "developing/gaming/solana-pay-sign-on-phone",
+              label: "Combine a game with Solana Pay",
+            },
+            {
+              type: "doc",
+              id: "developing/gaming/big-accounts",
+              label: "Handle big accounts",
+            },,
+            {
+              type: "doc",
+              id: "developing/gaming/auto-approve",
+              label: "Auto approve transactions",
+            },
+          ],
+        },        
+
+        {
+          type: "doc",
+          id: "developing/gaming/monetization",
+          label: "Monetization",
+        },
+        {
+          type: "doc",
+          id: "developing/gaming/distribution",
+          label: "Distribution",
         },
       ],
     },
