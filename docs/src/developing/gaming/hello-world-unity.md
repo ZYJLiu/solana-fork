@@ -1,6 +1,6 @@
 ---
 title: Hello World example Solana
-description: A tiny game that shows how game can interact with the solana block chain
+description: A tiny game that shows how game can interact with the Solana block chain
 ---
 
 # Hello World On Chain game with Unity
@@ -81,10 +81,10 @@ Within Unity game engine we can then use the [Solana Unity SDK](https://assetsto
 1. First we find the on chain adress of the game data account with TryFindProgramAddress. 
 We need to pass in this account to the transaction so that the Solana runtime knows that we want to change this account. 
 2. Next we use the generated client to create a MoveRight instruction. 
-3. Then we request a Blockhash from an RPC node. This is needed so that Solana knows how long the transaction will be valid. 
-4. Next we set the feepayer to be the players wallet. 
+3. Then we request a block hash from an RPC node. This is needed so that Solana knows how long the transaction will be valid. 
+4. Next we set the fee payer to be the players wallet. 
 5. Then we add the move right instruction to the Transaction. We can also add multiple instructions to a singe transaction if needed. 
-6. Afterwards the transaction gets signed and then send to the RPC node for procressing. 
+6. Afterwards the transaction gets signed and then send to the RPC node for processing. 
 Solana has different Commitment levels. If we set the commitment level to Confirmed we will be able to get the new state already within the next 500ms. 
 
 7. [Full C# Source Code](https://github.com/Woody4618/SolPlay_Unity_SDK/tree/main/Assets/SolPlay/Examples/TinyAdventure)

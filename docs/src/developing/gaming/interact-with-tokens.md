@@ -1,6 +1,6 @@
 ---
-title: Hello World example Solana
-description: A tiny game that shows how game can interact with the solana block chain
+title: How interact with tokens in programs
+description: A tiny game that shows how game can interact with the Solana block chain
 ---
 
 # How to interact with tokens
@@ -37,7 +37,7 @@ The authority is our token pda. What [Anchor Framework](https://www.anchor-lang.
     vault_token_account: Account<'info, TokenAccount>,
 ```
 
-We also need to pass in the Token Mint and the token account of the sender so that the solana runtime knows all the accounts needed in advance. 
+We also need to pass in the Token Mint and the token account of the sender so that the Solana runtime knows all the accounts needed in advance. 
 
 ```js
     #[account(mut)]
@@ -83,7 +83,7 @@ When we want to transfer something out of the token account that is owned by our
         anchor_spl::token::transfer(cpi_ctx, data)?;
 ```
 
-This is how you can find the correct PDA adresses in the js client:
+This is how you can find the correct PDA addresses in the js client:
 
 ```js 
 let [tokenAccountOwnerPda, bump] = await PublicKey.findProgramAddress(
@@ -97,7 +97,7 @@ let [token_vault, bump2] = await PublicKey.findProgramAddress(
 );
 ```
 
-These account addresses we can then pass in the transaction. It's a nice trick to set skipPreflight to true so you can copy the signature into a solana explorer and see exactly what happened on chain. Without it the transaction would fail in the simulation step if you have an error. 
+These account addresses we can then pass in the transaction. It's a nice trick to set skipPreflight to true so you can copy the signature into a Solana explorer and see exactly what happened on chain. Without it the transaction would fail in the simulation step if you have an error. 
 
 ```js
 let accounts = {

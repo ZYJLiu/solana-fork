@@ -6,8 +6,8 @@ description: Show how to pay out SOL to the player from a chest vault
 # Store sol in a program and pay it out to players
 
 
-I big benefit or a blockchain game is that you can reward players for actions in a game. To store sol we first create a program derived adress (PDA).
-This means that it is an account that the programm can sign for. Using the [Anchor Framework](https://www.anchor-lang.com/) this is pretty straight forward as you can see for the chest_vault account below you just need to add a seeds value to the account.
+I big benefit or a blockchain game is that you can reward players for actions in a game. To store sol we first create a program derived address (PDA).
+This means that it is an account that the program can sign for. Using the [Anchor Framework](https://www.anchor-lang.com/) this is pretty straight forward as you can see for the chest_vault account below you just need to add a seeds value to the account.
 
 ```js 
     #[account]
@@ -23,7 +23,7 @@ This means that it is an account that the programm can sign for. Using the [Anch
     pub chest_vault: Account<'info, ChestVaultAccount>,
 ```
 
-Then we can call an instruction on the program to deposit some sol into that account by calling the System program with a cross program invocation. This just means calling a program from within a program. Here you can see we are creating a CPIContext with the account we want to interact with and then pass themm to the system program transfer function to transfer 1000000 Lamports (fraction of sol token) into the chest vault. 
+Then we can call an instruction on the program to deposit some sol into that account by calling the System program with a cross program invocation. This just means calling a program from within a program. Here you can see we are creating a CPIContext with the account we want to interact with and then pass them to the system program transfer function to transfer 1000000 Lamports (fraction of sol token) into the chest vault. 
 
 ```js 
     let cpi_context = CpiContext::new(

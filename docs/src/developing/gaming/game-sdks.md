@@ -5,7 +5,7 @@ description: A list of SDKs that you can use to develope games on Solana
 
 ### Unity SDK
 
-The Solana Unity SDK is based on a Solnet fork and the Solanart SDK and maintained by the Team Magic block. It comes with NFT support, Transactions, RPC functions, Phantom Deeplinks, WebGL connector, WebSocket connection support and anchor client code generation.
+The Solana Unity SDK is based on a Solnet fork and the Solanart SDK and maintained by the Team Magic block. It comes with NFT support, Transactions, RPC functions, Phantom Deep links, WebGL connector, WebSocket connection support and anchor client code generation.
 
 [Docs](https://solana.unity-sdk.gg/)<br />
 [Verified Unity Asset Store Listing](https://assetstore.unity.com/packages/decentralization/infrastructure/solana-sdk-for-unity-246931)<br />
@@ -13,7 +13,7 @@ The Solana Unity SDK is based on a Solnet fork and the Solanart SDK and maintain
 
 ### Unreal SDK
 
-Originally build by the team of Startatlas. The Unity SDK is currently developed further. (Could need some maintainer)
+Originally build by the team of Star Atlas. The Unity SDK is currently developed further. (Could need some maintainer)
 
 [Source Code](https://github.com/staratlasmeta/FoundationKit)<br />
 [Tutorial](https://www.youtube.com/watch?v=S8fm8mFeUkk)<br />
@@ -26,7 +26,7 @@ Flutter is an open source framework by Google for building beautiful, natively c
 
 ### Next.js/React + Anchor
 
-One of the easiest way to build on Solana is using the Web3js Javascript framework in combination with the Solana Anchor framworks. For more complex games I would recommend using a GameEngine like Unity or Unreal though.
+One of the easiest way to build on Solana is using the Web3js Javascript framework in combination with the Solana Anchor frameworks. For more complex games I would recommend using a GameEngine like Unity or Unreal though.
 The fastest way to set it up is: 
 ```js
 npx create-solana-dapp your-app

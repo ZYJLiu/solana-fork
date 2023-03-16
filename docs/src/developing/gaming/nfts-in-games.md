@@ -1,6 +1,6 @@
 ---
 title: NFTs in games
-description: A list of options that should give you an idea of how NFTs can be utalized in games
+description: A list of options that should give you an idea of how NFTs can be utilized in games
 ---
 
 # NFTs In Games
@@ -65,7 +65,7 @@ The possibilities are pretty much endless.
 
 ## How to create an NFT collection
 
-NFTs on Solana mostly follow the Metaplex standart. The most common way to create an NFT collection is to create a candy machine which lets the user mint predefined pairs of meta data and images. 
+NFTs on Solana mostly follow the Metaplex standard. The most common way to create an NFT collection is to create a candy machine which lets the user mint predefined pairs of meta data and images. 
 
 [Metaplex Docs](https://docs.metaplex.com/)<br />
 [Setup a candy machine step by step](https://youtu.be/0KHv1dMV8zU)<br />

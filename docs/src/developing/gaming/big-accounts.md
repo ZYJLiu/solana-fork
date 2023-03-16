@@ -15,8 +15,8 @@ By default in Anchor all accounts being loaded will be on the stack. If you reac
 Stack offset of -30728 exceeded max offset of -4096 by 26632 bytes, please minimize large stack variables
 ```
 
-To prevent this to a certain degree you can Box your account. What this means is that the account will move to the heap and there will only be a pointer saved on the Stack.
-This can be done like this: 
+To prevent this to a certain degree, you can box your account. What this means is that the account will move to the heap, and there will only be a pointer saved on the stack. 
+This can be done like this:
 
 ```js
 #[derive(Accounts)]
@@ -26,7 +26,7 @@ pub struct Example {
 ```
 
 If your account gets bigger it gets a bit more complicated. Solana does not allow Cross Program Invocations with accounts bigger than 10Kb.
-Anchor does use a CPI to initialize all new accounts. So it calls the System Progamm internally to create a new account.
+Anchor does use a CPI to initialize all new accounts. So it calls the System Program internally to create a new account.
 You can allocate more memory to your account like this with an extra transaction: 
 
 ```js
@@ -34,7 +34,7 @@ Program:
 
     #[derive(Accounts)]
     #[instruction(len: u16)]
-    pub struct IncreaseAccoutSize<'info> {
+    pub struct IncreaseAccountSize<'info> {
         #[account(mut, 
             realloc = len as usize, 
             realloc::zero = true, 
@@ -58,21 +58,17 @@ Js:
     .rpc();
 ```
 
-You can then call this multiple times adding 10240 in each transaction. 
-When loading an account which is bigger than the 10240 bytes though you will get an out of memory exception.
+You can then call this multiple times, adding 10240 bytes in each transaction. When loading an account that is bigger than 10240 bytes, however, you will get an out-of-memory exception.
 
-If you need an even bigger account size you need to look into Zero Copy serialization. 
-You should only use zero copy for large accounts that can not be Borsh/Anchor deserialised without hitting the heap or stack limits. 
-With zero copy deserialization, all bytes from the account's backing `RefCell<&mut [u8]>` are simply re-interpreted as a reference to
-the data structure. No allocations or copies necessary. This is how we can get around the stack and heap limitations.
+If you need an even bigger account size, you need to look into Zero Copy serialization. You should only use zero copy for large accounts that cannot be Borsh/Anchor deserialized without hitting the heap or stack limits. With zero copy deserialization, all bytes from the account's backing RefCell<&mut [u8]> are simply reinterpreted as a reference to the data structure. No allocations or copies are necessary. This is how we can get around the stack and heap limitations.
 
-For the account you want to serialize with zero copy you need to add this zero_copy to the account: 
+For the account you want to serialize with zero copy, you need to add this zero_copy attribute to the account:
 
 ```js
 #[account(zero_copy)]
 ```
 
-Then you can define the repr which definies how the data will be packed. By default repr[c] will be used, so the C serialization. 
+Then you can define the repr which defines how the data will be packed. By default repr[c] will be used, so the C serialization. 
 This will by default break options and enums in your structs because the C serialization is different from the Borsh serialization.
 You can also use:  
 
@@ -149,7 +145,7 @@ Like this you can interact with the data of the account using copy_from_slice or
 }
 ```
 
-Here is a game anchor progam that uses Zero Copy for a game grid: <br/> 
-[Anchor Programm](https://github.com/Woody4618/SolPlay_Unity_SDK/blob/main/Assets/SolPlay/Examples/SolHunter/AnchorProgram/src/state/game.rs)
+Here is a game anchor program that uses Zero Copy for a game grid: <br/> 
+[Anchor Program](https://github.com/Woody4618/SolPlay_Unity_SDK/blob/main/Assets/SolPlay/Examples/SolHunter/AnchorProgram/src/state/game.rs)
 [Another Example using items](https://github.com/coral-xyz/anchor/issues/651)
 
